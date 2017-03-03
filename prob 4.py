@@ -45,8 +45,8 @@ from sklearn.svm import SVR
 reg = SVR(C=17, epsilon=0.3, kernel='rbf', gamma=5)
 reg.fit(xtrain.reshape(-1,1),ytrain)
 
-ypred=reg.predict(xtest)
+ypred=reg.predict(xtest.reshape(-1,1))
 
-error_svr = errorcalc(ypred, ytest)
+error_svr = errorcalc(ypred, ytest) #0.015
 1
 
